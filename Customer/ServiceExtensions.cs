@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace CustomerDomain
 {
@@ -14,10 +15,9 @@ namespace CustomerDomain
             where S : class, ICustomerStore
             where N : class, ICustomerNotify
         {
-            if (services.FirstOrDefault(s => s.ServiceType == typeof(ICustomerStore)) != null)
-                services.AddScoped<S>();
-            if (services.FirstOrDefault(s => s.ServiceType == typeof(ICustomerNotify)) != null)
-                services.AddScoped<N>();
+            // Make sure you only register a service if it is not already registered
+            services.TryAddScoped<S>();
+            services.TryAddScoped<N>();
         }
 
         public static void AddCustomersDomain(this IServiceCollection services)
