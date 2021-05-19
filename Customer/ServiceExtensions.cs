@@ -10,7 +10,7 @@ namespace CustomerDomain
     /// </summary>
     public static class CustomersServiceExtensions
     {
-        public static void AddCustomers<S, N>(this IServiceCollection services)
+        public static void AddCustomersDomain<S, N>(this IServiceCollection services)
             where S : class, ICustomerStore
             where N : class, ICustomerNotify
         {
@@ -20,9 +20,9 @@ namespace CustomerDomain
                 services.AddScoped<N>();
         }
 
-        public static void AddCustomers(this IServiceCollection services)
+        public static void AddCustomersDomain(this IServiceCollection services)
         {
-            services.AddCustomers<CustomerStore, CustomerNotify>();
+            services.AddCustomersDomain<CustomerStore, CustomerNotify>();
         }
     }
 }
