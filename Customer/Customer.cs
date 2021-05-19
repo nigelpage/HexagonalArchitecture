@@ -4,8 +4,9 @@ namespace CustomerDomain
 {
     public class Customer
     {
-        string FirstName { get; set; }
-        string LastName { get; set; }
-        DateTime DateOfBirth { get; set; }
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public DateTime DateOfBirth { get; set; }
     }
 }

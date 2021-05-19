@@ -4,13 +4,10 @@ namespace CustomerDomain
     public interface ICustomers
     {
 
-        Customer Find(string FirstName, string LastName);
-        void Add(Customer customer);
+        Customer FindById(int id);
+        Customer FindByName(string FirstName, string LastName);
+        int Add(Customer customer);
         void Delete(Customer customer);
-        void Update(Customer customer);
-
-        event EventHandler CustomerAdded;
-        event EventHandler CustomerDeleted;
-        event EventHandler CustomerUpdated;
+        void Update(int id, Customer customer);
     }
 }
