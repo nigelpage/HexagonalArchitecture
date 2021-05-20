@@ -11,18 +11,18 @@ namespace CustomerDomain
     /// </summary>
     public static class CustomersServiceExtensions
     {
-        public static void AddCustomersDomain<S, N>(this IServiceCollection services)
-            where S : class, ICustomerStore
-            where N : class, ICustomerNotify
+        public static void AddCustomersDomain<R, E>(this IServiceCollection services)
+            where R : class, ICustomerRepository
+            where E : class, ICustomerEvents
         {
             // Make sure you only register a service if it is not already registered
-            services.TryAddScoped<S>();
-            services.TryAddScoped<N>();
+            services.TryAddScoped<R>();
+            services.TryAddScoped<E>();
         }
 
         public static void AddCustomersDomain(this IServiceCollection services)
         {
-            services.AddCustomersDomain<CustomerStore, CustomerNotify>();
+            services.AddCustomersDomain<CustomerRepository, CustomerEvents>();
         }
     }
 }

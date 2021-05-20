@@ -4,12 +4,12 @@ using System.Linq;
 
 namespace CustomerDomain
 {
-    public class CustomerStore : ICustomerStore
+    public class CustomerRepository : ICustomerRepository
     {
         private List<Customer> _customers;
         private int _maxCustomerId;
 
-        public CustomerStore()
+        public CustomerRepository()
         {
             _customers = new List<Customer>();
         }

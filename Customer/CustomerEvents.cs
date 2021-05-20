@@ -3,11 +3,11 @@ namespace CustomerDomain
 {
     /// <summary>
     /// A simple notification class that fires events.
-    /// N.B. This could be replaced by a class that sends messages using Kafka, Azure Event Hubs, Amazon SQS, etc...
+    /// N.B. This could be replaced by a class that sends messages using KubeMQ, Kafka, Azure Event Hubs, Amazon SQS, etc...
     /// </summary>
-    public class CustomerNotify : ICustomerNotify
+    public class CustomerEvents : ICustomerEvents
     {
-        public CustomerNotify()
+        public CustomerEvents()
         {
         }
 

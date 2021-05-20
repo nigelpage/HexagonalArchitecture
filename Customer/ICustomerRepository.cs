@@ -1,7 +1,7 @@
 ﻿using System;
 namespace CustomerDomain
 {
-    public interface ICustomerStore
+    public interface ICustomerRepository
     {
         Customer FindByName(string firstName, string lastName);
         Customer FindById(int id);

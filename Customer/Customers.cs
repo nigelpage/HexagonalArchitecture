@@ -11,49 +11,49 @@ namespace CustomerDomain
     ///
     /// Important things to note: -
     ///
-    /// 1) the repository/store where customers are stored is in a separate class which is dependency injected via the constructor
+    /// 1) the repository where customers are stored is in a separate class which is dependency injected via the constructor
     /// 2) the notification/event mechanism is in a separate class which is dependency injected via the constructor
     /// 3) this class implements an interface defining the functions on offer through this domain
     ///    enabling it to be dependency injected into a class exposing it to a broader audience (e.g. via REST, gRPC, GraphQL, etc...)
     /// </summary>
     public class Customers : ICustomers
     {
-        private readonly ICustomerStore _store;
-        private readonly ICustomerNotify _notify;
+        private readonly ICustomerRepository _repository;
+        private readonly ICustomerEvents _events;
 
-        public Customers(ICustomerStore store, ICustomerNotify notify)
+        public Customers(ICustomerRepository repository, ICustomerEvents notify)
         {
-            _store = store;
-            _notify = notify;
+            _repository = repository;
+            _events = notify;
         }
 
         public Customer FindByName(string firstName, string lastName)
         {
-            return _store.FindByName(firstName, lastName);
+            return _repository.FindByName(firstName, lastName);
         }
 
         public Customer FindById(int id)
         {
-            return _store.FindById(id);
+            return _repository.FindById(id);
         }
 
         public int Add(Customer customer)
         {
-            int id = _store.Add(customer);
-            _notify?.CustomerAdded(customer);
+            int id = _repository.Add(customer);
+            _events.CustomerAdded(customer);
             return id;
         }
 
         public void Delete(Customer customer)
         {
-            _store.Delete(customer);
-            _notify?.CustomerDeleted(customer);
+            _repository.Delete(customer);
+            _events.CustomerDeleted(customer);
         }
 
         public void Update(int id, Customer customer)
         {
-            _store.Update(id, customer);
-            _notify?.CustomerUpdated(customer);
+            _repository.Update(id, customer);
+            _events.CustomerUpdated(customer);
         }
     }
 }

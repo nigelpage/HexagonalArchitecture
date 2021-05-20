@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalArchitecture", "He
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerDomain", "Customer\CustomerDomain.csproj", "{7C144360-AAD8-4E51-BEAC-C05052A9E85B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomersAPI", "CustomersAPI\CustomersAPI.csproj", "{F4761BA3-6153-4BC1-AD45-3C250C6216AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7C144360-AAD8-4E51-BEAC-C05052A9E85B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C144360-AAD8-4E51-BEAC-C05052A9E85B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C144360-AAD8-4E51-BEAC-C05052A9E85B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4761BA3-6153-4BC1-AD45-3C250C6216AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4761BA3-6153-4BC1-AD45-3C250C6216AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4761BA3-6153-4BC1-AD45-3C250C6216AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4761BA3-6153-4BC1-AD45-3C250C6216AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
