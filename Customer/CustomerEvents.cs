@@ -32,17 +32,17 @@ namespace CustomerDomain
 
         protected virtual void OnCustomerAdded(Customer customer)
         {
-            NotifyCustomerAdded?.Invoke(this, new CustomerEventArgs(customer));
+            NotifyCustomerAdded.Invoke(this, new CustomerEventArgs(customer));
         }
 
         protected virtual void OnCustomerDeleted(Customer customer)
         {
-            NotifyCustomerDeleted?.Invoke(this, new CustomerEventArgs(customer));
+            NotifyCustomerDeleted.Invoke(this, new CustomerEventArgs(customer));
         }
 
         protected virtual void OnCustomerUpdated(Customer customer)
         {
-            NotifyCustomerUpdated?.Invoke(this, new CustomerEventArgs(customer));
+            NotifyCustomerUpdated.Invoke(this, new CustomerEventArgs(customer));
         }
     }
 

@@ -23,8 +23,8 @@ namespace CustomerDomain
 
         public Customers(ICustomerRepository repository, ICustomerEvents notify)
         {
-            _repository = repository;
-            _events = notify;
+            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
+            _events = notify ?? throw new ArgumentNullException(nameof(notify));
         }
 
         public Customer FindByName(string firstName, string lastName)
